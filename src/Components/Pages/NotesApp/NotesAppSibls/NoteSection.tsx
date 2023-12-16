@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import NoteFilterDialog from './NoteFilterDialog/NoteFilterDialog';
 import { useNavigate } from 'react-router-dom';
 import UpdateDeleteConfirmDialog from './UpdateDeleteConfirmDialog';
+import NoteDialog from './NoteDialog';
 
 const CompoFramerMotion = ({ children }: any) => {
     return (
@@ -74,7 +75,7 @@ const NoteSection = () => {
         noteLockValue = JSON.parse(noteLockValue)
 
         if (noteLockValue.passCode.trim() === '') {
-            navigate('/notes/createpasscode')
+            navigate('/todonotes/notes/createpasscode')
         } else {
             dispatch({
                 type: 'NOTE_LOCK_HANDLE',
@@ -222,12 +223,17 @@ const NoteSection = () => {
                         <Add fontSize='large' />
                     </IconButton>
                 </Tooltip>
+
+                {/* Filter Dialog */}
+                <NoteFilterDialog />
+                {/* Update or Delete Confirmation Dialog */}
+                <UpdateDeleteConfirmDialog />
+
+                {/* Note Add Dialog */}
+                <NoteDialog />
             </Box>
 
-            {/* Filter Dialog */}
-            <NoteFilterDialog />
-            {/* Update or Delete Confirmation Dialog */}
-            <UpdateDeleteConfirmDialog />
+
         </>
     )
 }

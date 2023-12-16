@@ -4,12 +4,28 @@ import { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import dayjs from 'dayjs';
 import { AppDataContext } from '../../../../AppContext/AppDataProvider';
+import NoteDialog from '../NotesAppSibls/NoteDialog';
+import UpdateDeleteConfirmDialog from '../NotesAppSibls/UpdateDeleteConfirmDialog';
 
 const NoteView = () => {
     const { noteId } = useParams();
     const navigate = useNavigate();
-    const { state } = useContext(AppDataContext);
+    const { state, dispatch } = useContext(AppDataContext);
     const noteData = state.notesData.filter((obj) => obj.id.toString() === noteId)[0];
+
+    const EditBtn = () => {
+        dispatch({
+            type: 'NOTEDIALOGHANDLER',
+            payload: {
+                isDialogOpen: true,
+                mode: 'update',
+                data: {
+                    id: noteData.id,
+                    date: noteData.userDate
+                }
+            }
+        })
+    }
 
     return (
         <>
@@ -60,7 +76,7 @@ const NoteView = () => {
 
                 <Tooltip title='Edit'>
                     <IconButton
-                        // onClick={() => AddNoteBtn()}
+                        onClick={() => EditBtn()}
                         size='large'
                         sx={{
                             position: 'fixed',
@@ -76,6 +92,9 @@ const NoteView = () => {
                         <Edit />
                     </IconButton>
                 </Tooltip>
+                
+                <NoteDialog />
+                <UpdateDeleteConfirmDialog />
             </Container>
         </>
     )

@@ -12,12 +12,14 @@ import NoteViewIdCheck from './Components/Pages/NotesApp/NoteView/NoteViewIdChec
 import ProtectedNotesApp from './Components/Pages/NotesApp/ProtectNotesApp/ProtectedNotesApp.tsx'
 import CreateOrForgetPassCode from './Components/Pages/NotesApp/ProtectNotesApp/CreateOrForgetPassCode.tsx'
 import LoadingPage from './Components/Pages/LoadingCompo/LoadingPage.tsx'
+import PageNotFound from './Components/Pages/PageNotFound.tsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/todonotes/",
     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
+    errorElement: <PageNotFound />,
     children: [
       {
         path: '/todonotes/',

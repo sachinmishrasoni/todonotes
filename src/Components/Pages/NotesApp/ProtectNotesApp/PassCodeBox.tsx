@@ -143,7 +143,7 @@ const PassCodeBox = () => {
                                         color: 'success.main'
                                     }
                                 }}
-                                onClick={() => navigate('/notes/forgetpasscode')}
+                                onClick={() => navigate('/todonotes/notes/forgetpasscode')}
                             >Forget</Typography>
                         </Stack>
                         <Stack direction={'row-reverse'}>

@@ -1,5 +1,4 @@
 import { Container } from "@mui/material";
-import NoteDialog from "./NotesAppSibls/NoteDialog";
 import NoteSection from "./NotesAppSibls/NoteSection";
 import { useContext } from "react";
 import { AppDataContext } from "../../../AppContext/AppDataProvider";
@@ -20,9 +19,6 @@ const NotesApp = () => {
                         : <NoteSection />
                 }
 
-
-                {/* Note Add Dialog */}
-                <NoteDialog />
             </Container>
         </>
     )
