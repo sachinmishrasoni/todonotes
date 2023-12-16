@@ -7,22 +7,21 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const BottomNavBar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const [isActive, setIsActive] = useState<string>(location.pathname === "/todonotes" ? 'todos' : 'notes');
+    const [isActive, setIsActive] = useState<string>(location.pathname === "/todonotes/" ? 'todos' : 'notes');
 
     const handleBtn = (actvBtn: string) => {
         setIsActive(actvBtn);
-        navigate(actvBtn === 'todos' ? "/todonotes" : "/todonotes/notes");
+        navigate(actvBtn === 'todos' ? "/todonotes/" : "/todonotes/notes");
 
         window.scrollTo({ top: 0 });
     }
-    useEffect(() => { setIsActive(location.pathname === "/todonotes" ? 'todos' : 'notes') }, [location])
+    useEffect(() => { setIsActive(location.pathname === "/todonotes/" ? 'todos' : 'notes') }, [location])
     return (
         <>
             <Box className='bottom-navbar' component={'footer'}
                 sx={{
                     width: '100%',
                     position: 'fixed',
-                    // left: 0,
                     bottom: '0px',
                     zIndex: '500',
                     display: 'flex',

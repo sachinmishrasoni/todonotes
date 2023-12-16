@@ -16,11 +16,11 @@ import LoadingPage from './Components/Pages/LoadingCompo/LoadingPage.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/todonotes",
+    path: "/todonotes/",
     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
     children: [
       {
-        path: '/todonotes',
+        path: '/todonotes/',
         element: <TodosApp />
       },
       {
