@@ -61,7 +61,7 @@ export type State = {
     noteDialog: {
         isDialogOpen: boolean;
         mode: string;
-        data: null | object;
+        data: any;
     };
     noteSort: {
         sortName: string;
@@ -160,7 +160,7 @@ const appData = {
     noteDialog: {
         isDialogOpen: false,
         mode: 'add',
-        data: null
+        data: {}
     },
     noteSort: {
         sortName: 'latest'

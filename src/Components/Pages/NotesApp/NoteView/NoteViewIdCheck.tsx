@@ -8,11 +8,11 @@ const NoteViewIdCheck = () => {
     const { noteId } = useParams();
     const { state } = useContext(AppDataContext);
     const noteIdArr = state.notesData.map((obj) => obj.id);
-    console.log(noteIdArr.includes(17))
+
     return (
         <>
             {
-                noteIdArr.includes(parseInt(noteId))
+                noteIdArr.includes(parseInt(noteId as string))
                     ? <NoteView />
                     : <NoteNotFound />
             }

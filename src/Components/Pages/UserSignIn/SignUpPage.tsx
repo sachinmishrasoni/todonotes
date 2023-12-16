@@ -9,8 +9,8 @@ interface ISignUp {
 }
 // Regx
 const nameExp = /^[A-Za-z]{2,50}$/;
-const emailExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const userIdExp = /^[A-Za-z][A-Za-z0-9_]{5,29}$/;
+// const emailExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// const userIdExp = /^[A-Za-z][A-Za-z0-9_]{5,29}$/;
 // const userPassExp = /^[[A-Za-z][A-Za-z0-9]{5,29}$]/;
 
 const SignUpPage = ({ closeBtnFunc }: ISignUp) => {

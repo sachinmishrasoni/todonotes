@@ -5,7 +5,8 @@ import { BaseSingleInputFieldProps, DatePicker, DatePickerProps, DateValidationE
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { AppDataContext } from '../../../../AppContext/AppDataProvider';
 
-interface NoteBookLogoButtonProps extends UseDateFieldComponentProps<Dayjs>,
+interface NoteBookLogoButtonProps
+    extends UseDateFieldComponentProps<Dayjs, any>,
     BaseSingleInputFieldProps<
         Dayjs | null,
         Dayjs,

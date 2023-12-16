@@ -182,7 +182,7 @@ const NoteDialog = () => {
 
                         {/* <Button variant='outlined' sx={{ borderRadius: '25px' }}>Save</Button> */}
                         <Tooltip title='Close'>
-                            <IconButton onClick={() => dispatch({ type: 'NOTEDIALOGHANDLER', payload: { isDialogOpen: false, mode: 'add' } })} >
+                            <IconButton onClick={() => dispatch({ type: 'NOTEDIALOGHANDLER', payload: { isDialogOpen: false, mode: 'add', data: null } })} >
                                 <Close />
                             </IconButton>
                         </Tooltip>

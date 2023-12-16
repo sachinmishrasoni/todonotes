@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Box, Button, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 import TodoImg from '../../../assets/image/todo.png';
 import { Create, Person, PersonAddAlt1, DarkMode, LightMode } from "@mui/icons-material";
@@ -7,12 +7,9 @@ import SignUpPage from './SignUpPage';
 import { AnimatePresence } from 'framer-motion';
 import ScaleFramer from '../../Animation/ScaleFramer';
 import TranslateXFramer from '../../Animation/TranslateXFramer';
-import { ThemeContext } from '../../../Theme/AppThemeProvider';
 import ModeBtnFramer from '../../Animation/ModeBtnFramer';
 
 const UserSelectOption = () => {
-    const consumer = useContext(ThemeContext);
-    const { toggleThemeMode } = consumer.Customization;
     const [isDarkModeActive, setIsDarkModeAcitve] = useState(true)
     const [whichUser, setWhichUser] = useState('');
 
@@ -23,7 +20,6 @@ const UserSelectOption = () => {
     // Toggle Button for Dark mode to Light Mode
     const ModeToggleBtn = () => {
         setIsDarkModeAcitve(!isDarkModeActive)
-        toggleThemeMode();
     }
     return (
         <>

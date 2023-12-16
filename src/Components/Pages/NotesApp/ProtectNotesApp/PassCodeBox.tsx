@@ -30,7 +30,7 @@ const PassCodeBox = () => {
     const inputRefs = useRef<(HTMLInputElement | null)[]>([null, null, null, null]);
     const [isShow, setIsShow] = useState(true);
 
-    const handleInputChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (index: number, event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const value = event.target.value;
 
         // Update the state with the new value
@@ -50,7 +50,7 @@ const PassCodeBox = () => {
 
     };
 
-    const handleKeyDown = (index: number, event: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (index: number, event: React.KeyboardEvent<HTMLDivElement>) => {
         // Handle backspace to clear the value and focus on the previous input
         if (event.key === 'Backspace' && index > 0 && passValue[index] === '') {
             const newOtpValues = [...passValue];

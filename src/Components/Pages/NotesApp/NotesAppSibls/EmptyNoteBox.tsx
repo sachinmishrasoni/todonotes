@@ -9,7 +9,8 @@ const EmptyNoteBox = () => {
             type: 'NOTEDIALOGHANDLER',
             payload: {
                 isDialogOpen: true,
-                mode: 'add'
+                mode: 'add',
+                data: {}
             }
         })
     }

@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, List, MenuItem, OutlinedInput, Select, Stack, Typography, styled } from '@mui/material';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, OutlinedInput, Select, Stack, Typography, styled } from '@mui/material';
 import { DatePicker, LocalizationProvider, PickersActionBarProps, PickersDay, PickersDayProps, pickersLayoutClasses } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -38,10 +38,16 @@ const CaldInfo = (props: PickersActionBarProps) => {
     )
 }
 
+type ServerDayProps = PickersDayProps<any> & {
+    highlightedDays?: string[];
+  };
+
+
 interface IFilterTodoD {
     isFilterDialogOpen: boolean;
     setIsFilterDialogOpen: Function;
 }
+
 const FilterTodoDialog = ({ isFilterDialogOpen, setIsFilterDialogOpen }: IFilterTodoD) => {
     const { state, dispatch } = useContext(AppDataContext);
     const startOfQ12022 = dayjs('2023-01-01T00:00:00.000');
@@ -50,8 +56,7 @@ const FilterTodoDialog = ({ isFilterDialogOpen, setIsFilterDialogOpen }: IFilter
     const [isDateCompActive, setIsDateCompoActive] = useState(false);
     const [isMenuItemActive, setIsMenuItemActive] = useState(false);
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-    // const todoAllDate = state.todosData.map((date) => date.date);
-    const highlightedDays = state.todosData.map((date) => DateReplace(date.date));
+    const highlightedDays: string[] = state.todosData.map((date) => DateReplace(date.date));
 
     const SelectHandler = (value: string) => {
         if (value === 'custom') {
@@ -193,7 +198,7 @@ const FilterTodoDialog = ({ isFilterDialogOpen, setIsFilterDialogOpen }: IFilter
                                                     value={listValue}
                                                     defaultValue={0}
                                                     input={<OutlinedInput label='List' id='Label' />}
-                                                    onChange={(e) => setListValue(e.target.value)}
+                                                    onChange={(e) => setListValue(e.target.value as number)}
                                                 >
                                                     <MenuItem value={0}>All Todo</MenuItem>
                                                     <MenuItem value={1}>Completed Todo</MenuItem>
@@ -226,7 +231,7 @@ const FilterTodoDialog = ({ isFilterDialogOpen, setIsFilterDialogOpen }: IFilter
                                                         slotProps={{
                                                             day: {
                                                                 highlightedDays,
-                                                            },
+                                                            } as ServerDayProps,
                                                             layout: {
                                                                 sx: {
                                                                     [`.${pickersLayoutClasses.actionBar}`]: {

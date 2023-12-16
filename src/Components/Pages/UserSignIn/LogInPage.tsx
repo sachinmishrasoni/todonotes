@@ -3,7 +3,7 @@ import { Close, Visibility, VisibilityOff, Edit, ArrowForward, MoreHoriz } from 
 import { useState, ChangeEvent } from 'react';
 import { AnimatePresence } from 'framer-motion'
 import TranslateXFramer from '../../Animation/TranslateXFramer';
-import NotifySnackBar from '../../GobalCompo/NotifySnackBar';
+// import NotifySnackBar from '../../GobalCompo/NotifySnackBar';
 
 interface ILogIn {
     closeBtnFunc: Function
@@ -194,7 +194,7 @@ const LogInPage = ({ closeBtnFunc }: ILogIn) => {
                     </Stack>
                 </Box>
                 {/* Notification Bar */}
-                <NotifySnackBar notifyBarProps={notifyBarProps} setNotifyBarProps={setNotifyBarProps} />
+                {/* <NotifySnackBar notifyBarProps={notifyBarProps} setNotifyBarProps={setNotifyBarProps} /> */}
             </Paper>
         </>
     )
