@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 const useDayCount = (currFullDate: string, prevFullDate: string) => {
     const [dateCount, setDateCount] = useState(0);
     const currFullDateArr = currFullDate.split('-').map((item) => parseInt(item));
-    const [currDate, currMonth, currYear] = currFullDateArr;
+    const [currDate] = currFullDateArr;
     const prevFullDateArr = prevFullDate.split('-').map((item) => parseInt(item));
-    const [prevDate, prevMonth, prevYear] = prevFullDateArr;
+    const [prevDate] = prevFullDateArr;
 
     useEffect(() => {
         if (currDate > prevDate) {

@@ -5,11 +5,8 @@ import SettingsDrawer from "./SettingsDrawer";
 import AppName2 from './AppName2';
 import { SettingsOutlined } from '@mui/icons-material';
 
-interface IHeaderProps {
-    boolVal?: boolean;
-}
 
-const Header = ({ boolVal }: IHeaderProps) => {
+const Header = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
     return (
@@ -17,15 +14,8 @@ const Header = ({ boolVal }: IHeaderProps) => {
             <AppBar
                 position={"sticky"}
                 sx={{
-                    // py: boolVal ? 1: 0,
-                    // borderBottom: '2px solid orange',
-                    // borderRadius: '0 0 15px 15px',
-                    // height: boolVal ? '60px' : '0px',
-                    // transition: 'all 0.2s ease-in',
                     justifyContent: 'center',
-                    // py: 1.2,
                     height: '60px',
-                    // borderBottom: '2px solid orange',
                     borderRadius: '0 0 15px 15px',
                     backgroundColor: 'myThemeColors.primary',
                     color: 'inherit'
@@ -38,8 +28,6 @@ const Header = ({ boolVal }: IHeaderProps) => {
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        // transform: boolVal ? 'translateY(0px)' : 'translateY(-50px)',
-                        // transition: 'all 0.2s ease-in'
                     }}
                 >
                     <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
