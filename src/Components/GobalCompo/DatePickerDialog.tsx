@@ -37,7 +37,7 @@ const CaldInfo = (props: PickersActionBarProps) => {
 }
 
 const DatePickerDialog = () => {
-    const { state, dispatch } = useContext(AppDataContext);
+    const { state } = useContext(AppDataContext);
     // const { isDialogOpen } = state.datePickerDialog;
     const startOfQ12022 = dayjs('2023-01-01T00:00:00.000');
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -69,7 +69,7 @@ const DatePickerDialog = () => {
         setSelectedDate(date);
     };
 
-    function ServerDay(props: PickersDayProps<Dayjs> & { highlightedDays?: number[] }) {
+    function ServerDay(props: PickersDayProps<any> & { highlightedDays?: number[] }) {
         const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
 
         const isSelected =
@@ -86,33 +86,33 @@ const DatePickerDialog = () => {
         );
     }
 
-    const doneBtn = () => {
-        let date = dayjs(selectedDate).format('DD-MM-YYYY');
-        dispatch({
-            type: 'DATEPICKERDIALOGHANDL',
-            payload: {
-                isDialogOpen: false,
-                selectDate: date,
-                isShowComp: true
-            }
-        });
-    }
+    // const doneBtn = () => {
+    //     let date = dayjs(selectedDate).format('DD-MM-YYYY');
+    //     dispatch({
+    //         type: 'DATEPICKERDIALOGHANDL',
+    //         payload: {
+    //             isDialogOpen: false,
+    //             selectDate: date,
+    //             isShowComp: true
+    //         }
+    //     });
+    // }
 
-    const cancelBtn = () => {
-        dispatch({
-            type: 'DATEPICKERDIALOGHANDL',
-            payload: {
-                isDialogOpen: false,
-                selectDate: '',
-                isShowComp: false
-            }
-        });
-    }
+    // const cancelBtn = () => {
+    //     dispatch({
+    //         type: 'DATEPICKERDIALOGHANDL',
+    //         payload: {
+    //             isDialogOpen: false,
+    //             selectDate: '',
+    //             isShowComp: false
+    //         }
+    //     });
+    // }
 
     return (
         <>
             <Dialog
-                open={isDialogOpen}
+                open={false}
                 sx={{
                     '& .MuiPaper-root': {
                         border: '0.1px solid orange',
@@ -156,8 +156,8 @@ const DatePickerDialog = () => {
                     </LocalizationProvider>
 
                     <Stack direction={'row'} justifyContent={'space-between'} mt={1.5}>
-                        <Button variant="outlined" onClick={() => cancelBtn()}>Cancel</Button>
-                        <Button variant="outlined" onClick={() => doneBtn()} disabled={selectedDate === null ? true : false}>Done</Button>
+                        <Button variant="outlined">Cancel</Button>
+                        <Button variant="outlined" disabled={selectedDate === null ? true : false}>Done</Button>
                     </Stack>
                 </Box>
             </Dialog>
