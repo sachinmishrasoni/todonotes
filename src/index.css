@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Dosis&family=Kaushan+Script&family=Montserrat+Alternates&family=Mooli&family=PT+Serif&family=Pacifico&family=Philosopher&family=Roboto&family=Rubik&family=Ysabeau&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+#root::before{
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/image/vector_img01.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(0.06);
+  z-index: -5;
+}
+
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .outer-spiner{
+    animation: spinner1 infinite 1s linear;
+  }
+  .inner-spiner {
+    animation: spinner2 infinite 1s linear;
+  }
+}
+
+@keyframes spinner1 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+@keyframes spinner2 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (min-width: 600px) {
+  
+}
+
+@media (max-width: 600px) {
+
+  
+}
+

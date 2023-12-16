@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;600&family=Mooli&display=swap');
+/* #root {
+  
+} */
+
+*{
+  font-family: 'Mooli', sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .upDownAnimation {
+    animation: upanddown infinite 1s alternate;
+  }
+}
+
+@keyframes upanddown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}

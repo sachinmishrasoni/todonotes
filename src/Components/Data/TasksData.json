@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "day": "20-10-2020",
+        "tasks": [
+            {
+                "id": 1,
+                "taskName": "Running",
+                "taskDesc": "Running with my friends.",
+                "taskTiming": "10:00",
+                "isTaskDone": false
+            },
+            {
+                "id": 2,
+                "taskName": "Study",
+                "taskDesc": "Study with some notes.",
+                "taskTiming": "11:00",
+                "isTaskDone": false
+            },
+            {
+                "id": 3,
+                "taskName": "Go to tution",
+                "taskDesc": "take some snakes",
+                "taskTiming": "12:00",
+                "isTaskDone": false
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "day": "19-10-2020",
+        "tasks": [
+            {
+                "id": 1,
+                "taskName": "Running",
+                "taskDesc": "Running with my friends.",
+                "taskTiming": "10:00",
+                "isTaskDone": false
+            },
+            {
+                "id": 2,
+                "taskName": "Study",
+                "taskDesc": "Study with some notes.",
+                "taskTiming": "11:00",
+                "isTaskDone": false
+            },
+            {
+                "id": 3,
+                "taskName": "Go to tution",
+                "taskDesc": "take some snakes",
+                "taskTiming": "12:00",
+                "isTaskDone": false
+            }
+        ]
+    }
+]
