@@ -24,19 +24,19 @@ const router = createBrowserRouter([
         element: <TodosApp />
       },
       {
-        path: '/todonotes/notes',
+        path: 'notes',
         element: <ProtectedNotesApp  />
       },
       {
-        path: '/todonotes/notes/:noteId',
+        path: 'notes/:noteId',
         element: <NoteViewIdCheck />
       },
       {
-        path: '/todonotes/notes/createpasscode',
+        path: 'notes/createpasscode',
         element: <CreateOrForgetPassCode />
       },
       {
-        path: '/todonotes/notes/forgetpasscode',
+        path: 'notes/forgetpasscode',
         element: <CreateOrForgetPassCode />
       }
     ]
