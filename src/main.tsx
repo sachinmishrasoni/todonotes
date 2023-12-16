@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
     children: [
       {
-        path: '/todonotes/',
+        path: '',
         element: <TodosApp />
       },
       {

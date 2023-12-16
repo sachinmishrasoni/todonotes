@@ -21,7 +21,7 @@ const NoteRimCard = ({ data }: INoteRimCard) => {
     };
 
     const CardHandler = (id: number) => {
-        navigate(`/notes/${id}`)
+        navigate(`/todonotes/notes/${id}`)
     }
 
     const MenuHandle = (value: string) => {
