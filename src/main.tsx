@@ -16,27 +16,27 @@ import LoadingPage from './Components/Pages/LoadingCompo/LoadingPage.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/todonotes",
     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
     children: [
       {
-        path: '/',
+        path: '/todonotes',
         element: <TodosApp />
       },
       {
-        path: 'notes',
+        path: '/todonotes/notes',
         element: <ProtectedNotesApp  />
       },
       {
-        path: 'notes/:noteId',
+        path: '/todonotes/notes/:noteId',
         element: <NoteViewIdCheck />
       },
       {
-        path: 'notes/createpasscode',
+        path: '/todonotes/notes/createpasscode',
         element: <CreateOrForgetPassCode />
       },
       {
-        path: 'notes/forgetpasscode',
+        path: '/todonotes/notes/forgetpasscode',
         element: <CreateOrForgetPassCode />
       }
     ]
