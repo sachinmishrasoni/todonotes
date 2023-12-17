@@ -132,7 +132,8 @@ const TodoDrawer = () => {
                 sx={{
                     '& .MuiPaper-root': {
                         borderRadius: '15px 15px 0 0',
-                        borderTop: '2px solid orange',
+                        borderTop: '2px solid',
+                        borderColor: 'myThemeColors.highlight',
                         p: 1,
                         backgroundImage: 'none'
                     }
