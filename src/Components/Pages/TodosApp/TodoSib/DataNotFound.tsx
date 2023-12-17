@@ -13,9 +13,12 @@ const DataNotFound = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Typography variant="h3" fontWeight={'bold'}>Oops!</Typography>
-                <Typography variant="h5">Todo is not added.</Typography>
-                <Button variant="outlined" color="warning" sx={{ borderRadius: '25px' }} onClick={() => dispatch({type: 'MYDRAWER', payload: {isDrawerOpen: true, mode: 'Add'}})}>Add Todo</Button>
+                <Box>
+                    <Typography variant="h4">Hi there,</Typography>
+                    <Typography variant="h5">There is no added your todo.</Typography>
+                    <Typography color={'gray'}>Please add your first todo and explore and enjoy this app.</Typography>
+                    <Button variant="outlined" color="warning" sx={{ borderRadius: '25px', mt: 2 }} onClick={() => dispatch({ type: 'MYDRAWER', payload: { isDrawerOpen: true, mode: 'Add' } })}>Add Todo</Button>
+                </Box>
             </Box>
         </>
     )

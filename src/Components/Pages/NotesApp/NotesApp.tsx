@@ -3,6 +3,7 @@ import NoteSection from "./NotesAppSibls/NoteSection";
 import { useContext } from "react";
 import { AppDataContext } from "../../../AppContext/AppDataProvider";
 import EmptyNoteBox from "./NotesAppSibls/EmptyNoteBox";
+import NoteDialog from "./NotesAppSibls/NoteDialog";
 
 
 const NotesApp = () => {
@@ -19,6 +20,8 @@ const NotesApp = () => {
                         : <NoteSection />
                 }
 
+                {/* Note Add Dialog */}
+                <NoteDialog />
             </Container>
         </>
     )

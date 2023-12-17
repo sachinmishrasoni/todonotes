@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { AppDataContext } from '../../../../AppContext/AppDataProvider';
 
 const EmptyNoteBox = () => {
@@ -25,15 +25,18 @@ const EmptyNoteBox = () => {
                     alignItems: 'center',
                 }}
             >
-                <Typography variant='h5' >Opps!</Typography>
-                <Typography variant='h4' fontWeight={'bold'}>Notes Not Found</Typography>
-                <Button
-                    size='small'
-                    variant='outlined'
-                    color='warning'
-                    sx={{ borderRadius: 25, mt: 1 }}
-                    onClick={() => CreateBtn()}
-                >Create your first Note</Button>
+                <Box>
+                    <Typography variant="h4">Hi there,</Typography>
+                    <Typography variant="h5">There is no added your notes</Typography>
+                    <Typography color={'gray'}>Please add your first note and explore and enjoy this app.</Typography>
+                    <Button
+                        size='small'
+                        variant='outlined'
+                        color='warning'
+                        sx={{ borderRadius: 25, mt: 1 }}
+                        onClick={() => CreateBtn()}
+                    >Create your first Note</Button>
+                </Box>
             </Container>
         </>
     )

@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import NoteFilterDialog from './NoteFilterDialog/NoteFilterDialog';
 import { useNavigate } from 'react-router-dom';
 import UpdateDeleteConfirmDialog from './UpdateDeleteConfirmDialog';
-import NoteDialog from './NoteDialog';
 
 const CompoFramerMotion = ({ children }: any) => {
     return (
@@ -228,9 +227,6 @@ const NoteSection = () => {
                 <NoteFilterDialog />
                 {/* Update or Delete Confirmation Dialog */}
                 <UpdateDeleteConfirmDialog />
-
-                {/* Note Add Dialog */}
-                <NoteDialog />
             </Box>
 
 

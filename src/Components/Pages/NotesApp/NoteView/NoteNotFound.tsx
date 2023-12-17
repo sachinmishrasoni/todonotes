@@ -14,7 +14,7 @@ const NoteNotFound = () => {
             }}>
                 <Typography variant='h4' fontWeight={'bold'}>Oops!</Typography>
                 <Typography variant='h5'>Note Not Found.</Typography>
-                <Button onClick={() => navigate("/notes")}>Go to Notes</Button>
+                <Button onClick={() => navigate("/todonotes/notes")}>Go to Notes</Button>
             </Container>
         </>
     )
